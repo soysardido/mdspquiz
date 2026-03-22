@@ -212,12 +212,101 @@ const allModules = {
         "answer": 1
     }
     ],
-    "module2": [
-        // This is a placeholder for your future questions
+   "module2": [
         {
-            "q": "New Module 2 Question Placeholder?",
-            "options": ["Option A", "Option B", "Option C", "Option D"],
+            "q": "How is 'Motion' specifically indicated in mechanics?",
+            "options": ["Change in velocity", "Change in position", "Application of force", "Constant acceleration"],
+            "answer": 1
+        },
+        {
+            "q": "What determines the motion and possesses both direction and sense?",
+            "options": ["Vector", "Path", "Displacement", "Link"],
+            "answer": 1
+        },
+        {
+            "q": "What type of motion occurs when a point continues indefinitely in a given path in the same sense?",
+            "options": ["Reciprocating Motion", "Oscillation", "Continuous Motion", "Intermittent Motion"],
+            "answer": 2
+        },
+        {
+            "q": "When a point traverses the same path and reverses its motion at the ends, it is called:",
+            "options": ["Continuous Motion", "Reciprocating Motion", "Harmonic Motion", "Uniform Motion"],
+            "answer": 1
+        },
+        {
+            "q": "Which term is specifically applied to reciprocating circular motion, such as a pendulum?",
+            "options": ["Rotation", "Revolution", "Oscillation", "Retardation"],
+            "answer": 2
+        },
+        {
+            "q": "What is motion called when it is interrupted by periods of rest?",
+            "options": ["Variable Motion", "Intermittent Motion", "Oscillation", "Inversion"],
+            "answer": 1
+        },
+        {
+            "q": "The time rate of motion of a point along its path, expressed in linear units, is:",
+            "options": ["Angular Speed", "Linear Speed", "Acceleration", "Velocity Vector"],
+            "answer": 1
+        },
+        {
+            "q": "What is the time rate of turning a body about an axis and changing its direction?",
+            "options": ["Linear Speed", "Angular Speed", "Revolution", "Frequency"],
+            "answer": 1
+        },
+        {
+            "q": "In angular units, one revolution is exactly equal to how many radians?",
+            "options": ["π radians", "2π radians", "360 radians", "1.5π radians"],
+            "answer": 1
+        },
+        {
+            "q": "What are the standard units for rotational speed (N)?",
+            "options": ["rad/s", "deg/min", "rpm or rps", "fpm"],
+            "answer": 2
+        },
+        {
+            "q": "The linear speed of a rotating body is equal to the angular speed multiplied by what?",
+            "options": ["Diameter", "Radius", "Time", "Circumference"],
+            "answer": 1
+        },
+        {
+            "q": "According to the lecture, what is the economical speed for leather belting?",
+            "options": ["3000 fpm", "4500 fpm", "5000 fpm", "1760 rpm"],
+            "answer": 1
+        },
+        {
+            "q": "In 'Uniform Motion', what is the value of acceleration?",
+            "options": ["Constant", "Zero", "Varying", "Infinite"],
+            "answer": 1
+        },
+        {
+            "q": "What type of motion is characterized by constant acceleration?",
+            "options": ["Uniform Motion", "Uniformly Varying Motion", "Variable Acceleration", "Harmonic Motion"],
+            "answer": 1
+        },
+        {
+            "q": "When speed changes by equal amounts in equal intervals of time, the motion is:",
+            "options": ["Uniformly Varying", "Variable", "Intermittent", "Harmonic"],
             "answer": 0
+        },
+        {
+            "q": "If acceleration is a function of distance, velocity, or time, it is classified as:",
+            "options": ["Uniform", "Constant", "Variable Acceleration", "Zero Acceleration"],
+            "answer": 2
+        },
+        {
+            "q": "Which motion features acceleration that varies directly as the displacement?",
+            "options": ["Reciprocating Motion", "Oscillation", "Harmonic Motion", "Variable Integration"],
+            "answer": 2
+        },
+        {
+            "q": "Which graphical method should be used if you are given distance and time?",
+            "options": ["Graphical Integration", "Graphical Differentiation", "Vector Analysis", "Linear Regression"],
+            "answer": 1
+        },
+        {
+            "q": "Which graphical method should be used if you are given acceleration and time?",
+            "options": ["Graphical Differentiation", "Graphical Integration", "Harmonic Analysis", "Statics Analysis"],
+            "answer": 1
         }
     ]
 };
