@@ -609,6 +609,108 @@ const allModules = {
             "options": ["Grashof Linkage", "Non-Grashof Linkage", "Special Linkage", "Collinear Linkage"],
             "answer": 1
         }
+    ],
+    "module6": [
+        {
+            "q": "What is the term for defining the proper type of mechanism (e.g., linkage vs. cam) best suited for a task?",
+            "options": ["Dimensional Synthesis", "Type Synthesis", "Qualitative Synthesis", "Analytical Synthesis"],
+            "answer": 1
+        },
+        {
+            "q": "Determining the specific lengths of links necessary to accomplish a motion is called:",
+            "options": ["Type Synthesis", "Dimensional Synthesis", "Function Generation", "Path Generation"],
+            "answer": 1
+        },
+        {
+            "q": "Which task involves correlating an input motion with a specific output motion?",
+            "options": ["Path Generation", "Motion Generation", "Function Generation", "Type Synthesis"],
+            "answer": 2
+        },
+        {
+            "q": "Controlling a point so that it follows a specific prescribed path is known as:",
+            "options": ["Path Generation", "Motion Generation", "Function Generation", "Dimensional Synthesis"],
+            "answer": 0
+        },
+        {
+            "q": "Controlling a line in a plane so that it assumes a set of sequential positions is:",
+            "options": ["Path Generation", "Motion Generation", "Function Generation", "Type Synthesis"],
+            "answer": 1
+        },
+        {
+            "q": "What is a two-link chain used as a building block for mechanism synthesis called?",
+            "options": ["Binary Link", "Dyad", "Coupler", "Inversion"],
+            "answer": 1
+        },
+        {
+            "q": "In graphical synthesis, what geometric construction is used to find the center of rotation between two points?",
+            "options": ["Tangent Line", "Parallel Offset", "Perpendicular Bisector", "Arc Intersection"],
+            "answer": 2
+        },
+        {
+            "q": "In a 3-position synthesis, the intersection of two perpendicular bisectors for point C defines:",
+            "options": ["The Moving Pivot", "The Ground Pivot (O2)", "The Coupler length", "The Change Point"],
+            "answer": 1
+        },
+        {
+            "q": "A linkage designed for two positions, like a car hood or a toaster, is an example of:",
+            "options": ["Path Generation", "Two-position Dimensional Synthesis", "Complex Synthesis", "Analytical Inversion"],
+            "answer": 1
+        },
+        {
+            "q": "The points C and D on the coupler that connect to the cranks are known as:",
+            "options": ["Fixed Pivots", "Moving Pivots", "Nodes", "Dyads"],
+            "answer": 1
+        },
+        {
+            "q": "Which type of synthesis occurs in the absence of a well-defined algorithm?",
+            "options": ["Qualitative Synthesis", "Quantitative Synthesis", "Analytical Synthesis", "Precision Synthesis"],
+            "answer": 0
+        },
+        {
+            "q": "When designing for motion generation, the 'output' part of the linkage is usually the:",
+            "options": ["Ground Link", "Crank", "Coupler", "Slider"],
+            "answer": 2
+        },
+        {
+            "q": "To find a fixed pivot for a point moving from C1 to C2, you must bisect the line segment:",
+            "options": ["C1D1", "C2D2", "C1C2", "O2O4"],
+            "answer": 2
+        },
+        {
+            "q": "If you are designing a linkage to move a part through three specific positions, you are performing:",
+            "options": ["Two-position synthesis", "Three-position synthesis", "Type synthesis", "Mobility analysis"],
+            "answer": 1
+        },
+        {
+            "q": "The stationary attachment points of a mechanism are labeled as:",
+            "options": ["C and D", "S and L", "O2 and O4", "P and Q"],
+            "answer": 2
+        },
+        {
+            "q": "The final step in graphical synthesis often involves checking the:",
+            "options": ["Grashof Condition", "Weight of links", "Color of parts", "Number of nodes"],
+            "answer": 0
+        },
+        {
+            "q": "In dimensional synthesis, 'precision points' refer to:",
+            "options": ["The sharp edges of a link", "The exact positions the mechanism must reach", "The tolerances of the pins", "The centers of the nodes"],
+            "answer": 1
+        },
+        {
+            "q": "A linkage designed to duplicate motion at a remote location is a:",
+            "options": ["Slider-Crank", "Parallelogram Linkage", "Crank-Rocker", "Triple-Rocker"],
+            "answer": 1
+        },
+        {
+            "q": "Which method is primarily used for quantitative dimensional synthesis of cams?",
+            "options": ["Qualitative", "Analytical", "Type", "Intermittent"],
+            "answer": 1
+        },
+        {
+            "q": "If a synthesis result is 'Non-Grashof' but requires full rotation, what must be added?",
+            "options": ["A second ground", "A motor dyad", "A ternary link", "A sliding joint"],
+            "answer": 1
+        }
     ]
 };
 
