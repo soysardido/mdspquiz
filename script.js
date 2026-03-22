@@ -1,5 +1,7 @@
-const questions = [
-    {
+// 1. ORGANIZE QUESTIONS INTO MODULES
+const allModules = {
+    "module1": [
+      {
         "q": "Which field specifically treats the laws governing the motion of machine parts and the forces transmitted by them?",
         "options": ["Thermodynamics", "Science of Mechanism", "Fluid Mechanics", "Statics"],
         "answer": 1
@@ -209,21 +211,55 @@ const questions = [
         "options": ["Stop material bending", "Simplify relative motion analysis", "Comply with Laws", "Increase machine strength"],
         "answer": 1
     }
-];
+    ],
+    "module2": [
+        // This is a placeholder for your future questions
+        {
+            "q": "New Module 2 Question Placeholder?",
+            "options": ["Option A", "Option B", "Option C", "Option D"],
+            "answer": 0
+        }
+    ]
+};
 
+// 2. STATE VARIABLES
+let currentQuestions = []; // This will hold the active module's list
 let current = 0;
+let score = 0;
 
+// 3. NAVIGATION FUNCTIONS
+function startModule(moduleName) {
+    // Pick the questions based on the button clicked
+    currentQuestions = allModules[moduleName];
+    current = 0;
+    score = 0;
+
+    // UI Toggle
+    document.getElementById("menu-container").style.display = "none";
+    document.getElementById("quiz-container").style.display = "block";
+    document.getElementById("result").innerText = "";
+
+    loadQuestion();
+}
+
+function returnToMenu() {
+    if (confirm("Gusto ka mobalik sa Menu or Niya? Your progress will be reset.")) {
+        document.getElementById("quiz-container").style.display = "none";
+        document.getElementById("menu-container").style.display = "block";
+    }
+}
+
+// 4. CORE QUIZ LOGIC
 function loadQuestion() {
-    const q = questions[current];
+    const q = currentQuestions[current];
     document.getElementById("question").innerText = q.q;
 
     const choicesDiv = document.getElementById("choices");
-    choicesDiv.innerHTML = ""; // clear old buttons
+    choicesDiv.innerHTML = ""; 
 
     q.options.forEach((option, index) => {
         const btn = document.createElement("button");
         btn.innerText = option;
-        // Add the class your CSS uses
         btn.classList.add("option-btn"); 
         btn.onclick = () => checkAnswer(index);
         choicesDiv.appendChild(btn);
@@ -231,41 +267,41 @@ function loadQuestion() {
 }
 
 function checkAnswer(choice) {
-    const q = questions[current];
-    const choicesDiv = document.getElementById("choices");
-    const buttons = choicesDiv.querySelectorAll("button");
+    const q = currentQuestions[current];
+    const buttons = document.querySelectorAll(".option-btn");
     const result = document.getElementById("result");
 
-    // COLOR CODING LOGIC START
     buttons.forEach((btn, index) => {
-        btn.disabled = true; // prevent double clicking
+        btn.disabled = true; 
         if (index === q.answer) {
-            btn.classList.add("correct"); // Turn correct answer green
+            btn.classList.add("correct"); 
         } else if (index === choice) {
-            btn.classList.add("wrong"); // Turn user choice red if wrong
+            btn.classList.add("wrong"); 
         }
     });
-    // COLOR CODING LOGIC END
 
     if (choice === q.answer) {
         result.innerText = "Correct!";
+        score++;
     } else {
         result.innerText = "Wrong!";
     }
 
-    // Increased timeout to 2 seconds so you have time to see the colors!
     setTimeout(() => {
         current++;
-        if (current < questions.length) {
+        if (current < currentQuestions.length) {
             result.innerText = "";
             loadQuestion();
         } else {
-            document.getElementById("question").innerText = "Quiz Finished!";
-            document.getElementById("choices").innerHTML = "";
-            result.innerText = "";
+            showFinalScore();
         }
     }, 2000); 
 }
 
-// Initial load
-loadQuestion();
+function showFinalScore() {
+    document.getElementById("question").innerText = `Quiz Finished! Your Score: ${score}/${currentQuestions.length}`;
+    document.getElementById("choices").innerHTML = `
+        <button class="module-btn" onclick="returnToMenu()">Try Another Module</button>
+    `;
+    document.getElementById("result").innerText = "";
+}

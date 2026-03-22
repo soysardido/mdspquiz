@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>pasalamat basta nay mugawas usa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDSP Module Reviewer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Unta sayon ra mugawas from <i>Ahak Na Ni Review Center</i></h1>
+    <div id="menu-container">
+        <h1>Unta sayon ra mugawas from <i>Ahak Na Ni Review Center</i></h1>
+        <p>Pili ug Lecture, Engineer:</p>
+        <div class="module-grid">
+            <button class="module-btn" onclick="startModule('module1')">Lecture 1:Mechanisms</button>
+            <button class="module-btn" onclick="startModule('module2')">Lecture 2: wa pa na unlock</button>
+            <button class="module-btn" onclick="startModule('module3')">Lecture 3: kiss sa</button>
+        </div>
+    </div>
 
-<div id="question">Loading question...</div>
+    <div id="quiz-container" style="display: none;">
+        <button id="home-btn" onclick="returnToMenu()">🏠 Back to Menu</button>
+        
+        <div id="question">Loading question...</div>
+        <div id="choices"></div>
+        <p id="result"></p>
+    </div>
 
-<div id="choices"></div>
-<p id="result"></p>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
