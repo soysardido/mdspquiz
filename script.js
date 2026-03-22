@@ -308,6 +308,108 @@ const allModules = {
             "options": ["Graphical Differentiation", "Graphical Integration", "Harmonic Analysis", "Statics Analysis"],
             "answer": 1
         }
+    ],
+    "module3": [
+        {
+            "q": "What is an arm that rotates or oscillates about an axis called?",
+            "options": ["Link", "Crank", "Node", "Coupler"],
+            "answer": 1
+        },
+        {
+            "q": "When two cranks are rigidly connected to each other on the same axis, they form a:",
+            "options": ["Binary Link", "Mechanism", "Lever", "Joint"],
+            "answer": 2
+        },
+        {
+            "q": "What is a lever called if the angle between its two arms is less than 90°?",
+            "options": ["Rocker", "Bell Crank Lever", "Binary Link", "Slider"],
+            "answer": 1
+        },
+        {
+            "q": "A lever is classified as a 'Rocker' if the angle between its arms is:",
+            "options": ["Exactly 90°", "Less than 90°", "More than 90°", "Exactly 180°"],
+            "answer": 2
+        },
+        {
+            "q": "What is a rigid piece that transmits force from one piece to another and has at least two nodes?",
+            "options": ["Joint", "Link", "Frame", "Shaft"],
+            "answer": 1
+        },
+        {
+            "q": "What are the specific points on a link used for attachment to other links?",
+            "options": ["Nodes", "Pivots", "Axes", "Centers"],
+            "answer": 0
+        },
+        {
+            "q": "How many nodes does a 'Ternary Link' possess?",
+            "options": ["2", "3", "4", "5"],
+            "answer": 1
+        },
+        {
+            "q": "A link with four nodes is known as a:",
+            "options": ["Binary Link", "Ternary Link", "Quaternary Link", "Complex Link"],
+            "answer": 2
+        },
+        {
+            "q": "An interconnected system of links where NO single link is fixed is a:",
+            "options": ["Mechanism", "Kinematic Chain", "Structure", "Inversion"],
+            "answer": 1
+        },
+        {
+            "q": "A kinematic chain becomes a 'Mechanism' when:",
+            "options": ["It has 4 links", "One of the links is fixed", "It starts moving", "All links are binary"],
+            "answer": 1
+        },
+        {
+            "q": "In a four-bar linkage, what is the rigid rod that connects the two cranks?",
+            "options": ["Frame", "Line of Centers", "Coupler", "Node"],
+            "answer": 2
+        },
+        {
+            "q": "The distance between the two fixed centers in a four-bar linkage is the:",
+            "options": ["Path", "Coupler length", "Line of Centers", "Displacement"],
+            "answer": 2
+        },
+        {
+            "q": "Which mechanism is a special form of four-bar linkage where the slot centerline passes through shaft Q2?",
+            "options": ["Double-Crank", "Slider-Crank", "Crank-Rocker", "Oscillator"],
+            "answer": 1
+        },
+        {
+            "q": "What is another name for a kinematic pair?",
+            "options": ["Node", "Link", "Joint", "Crank"],
+            "answer": 2
+        },
+        {
+            "q": "A 'Simple Joint' is a connection that joins how many links?",
+            "options": ["One", "Two", "Three", "Four"],
+            "answer": 1
+        },
+        {
+            "q": "A joint connecting more than two links is classified as a:",
+            "options": ["Binary Joint", "Simple Joint", "Complex Joint", "Higher Pair"],
+            "answer": 2
+        },
+        {
+            "q": "What is the term for the number of independent inputs required to position a mechanism?",
+            "options": ["Kinematic Chain", "Degrees of Freedom", "Inversion", "Angular Speed"],
+            "answer": 1
+        },
+        {
+            "q": "A joint with surface contact, such as a pin or slider, is a:",
+            "options": ["Higher Pair", "Lower Pair", "Complex Joint", "Flexible Link"],
+            "answer": 1
+        },
+        {
+            "q": "Gears and cams, which have point or line contact, are examples of:",
+            "options": ["Lower Pairs", "Higher Pairs", "Simple Joints", "Binary Links"],
+            "answer": 1
+        },
+        {
+            "q": "A four-bar linkage where both cranks can make a full revolution is a:",
+            "options": ["Crank-Rocker", "Double-Rocker", "Double-Crank", "Slider-Crank"],
+            "answer": 2
+        }
     ]
 };
 
