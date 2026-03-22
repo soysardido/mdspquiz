@@ -711,6 +711,108 @@ const allModules = {
             "options": ["A second ground", "A motor dyad", "A ternary link", "A sliding joint"],
             "answer": 1
         }
+    ],
+    "module7": [
+        {
+            "q": "What is a point common to two bodies where the absolute instantaneous velocity is the same for both?",
+            "options": ["Centroid", "Instant Center", "Node", "Pivot"],
+            "answer": 1
+        },
+        {
+            "q": "What are two other names often used for Instant Centers?",
+            "options": ["Nodes and Links", "Centros and Poles", "Pivots and Joints", "Cams and Followers"],
+            "answer": 1
+        },
+        {
+            "q": "An Instant Center that is not a physical pin joint is referred to as a:",
+            "options": ["Fixed Point", "Permanent Center", "Virtual Common Point", "Slider Joint"],
+            "answer": 2
+        },
+        {
+            "q": "Which type of Instant Centers remain in the same place for all configurations?",
+            "options": ["Moving ICs", "Permanent ICs", "Fixed ICs", "Collinear ICs"],
+            "answer": 2
+        },
+        {
+            "q": "Instant Centers located at the physical joints that move with the mechanism are:",
+            "options": ["Fixed ICs", "Permanent ICs", "Moving ICs", "Virtual ICs"],
+            "answer": 1
+        },
+        {
+            "q": "How many Instant Centers are in a mechanism with 4 links?",
+            "options": ["4", "6", "8", "12"],
+            "answer": 1
+        },
+        {
+            "q": "What is the formula to calculate the number of Instant Centers (N) for 'n' links?",
+            "options": ["n(n-1)/2", "3(n-1)", "2n-1", "n^2"],
+            "answer": 0
+        },
+        {
+            "q": "Kennedy's Rule states that three bodies moving relative to each other have three ICs that:",
+            "options": ["Form a triangle", "Are at infinity", "Lie on a straight line", "Are perpendicular"],
+            "answer": 2
+        },
+        {
+            "q": "In a 4-bar linkage, which of these is considered a 'Moving' Instant Center?",
+            "options": ["I1,2", "I2,3", "I1,3", "I1,4"],
+            "answer": 2
+        },
+        {
+            "q": "What is the first step in the graphical method for locating hidden Instant Centers?",
+            "options": ["Draw a velocity vector", "Draw an IC circle", "Measure link lengths", "Fix the slider"],
+            "answer": 1
+        },
+        {
+            "q": "For a 6-link mechanism, how many Instant Centers must be located?",
+            "options": ["6", "10", "15", "20"],
+            "answer": 2
+        },
+        {
+            "q": "According to Kennedy's Rule, ICs I1,2, I2,3, and I1,3 must be:",
+            "options": ["Perpendicular", "Collinear", "At the same point", "Equidistant"],
+            "answer": 1
+        },
+        {
+            "q": "If two links are connected by a sliding joint, their IC is located at:",
+            "options": ["The center of the slider", "Infinity", "The ground pivot", "The coupler"],
+            "answer": 1
+        },
+        {
+            "q": "Permanent instant centers are usually found by:",
+            "options": ["Calculation", "Inspection of pin joints", "Kennedy's Rule", "The IC circle"],
+            "answer": 1
+        },
+        {
+            "q": "The IC circle diagram uses solid lines to represent:",
+            "options": ["Hidden ICs", "Unknown velocities", "ICs already found", "The ground link"],
+            "answer": 2
+        },
+        {
+            "q": "To find a moving IC like I1,3, you look for the intersection of lines from which two pairs?",
+            "options": ["(I1,2, I2,3) and (I1,4, I4,3)", "(I1,2, I1,4) and (I2,3, I3,4)", "(I1,1, I2,2) and (I3,3, I4,4)", "None of the above"],
+            "answer": 0
+        },
+        {
+            "q": "What happens to the location of a 'Moving' IC as the mechanism changes position?",
+            "options": ["It stays fixed", "It disappears", "It varies with the configuration", "It moves to the origin"],
+            "answer": 2
+        },
+        {
+            "q": "Which of these is a 'Fixed' IC in a standard 4-bar linkage?",
+            "options": ["I2,3", "I3,4", "I1,4", "I2,4"],
+            "answer": 2
+        },
+        {
+            "q": "The absolute instantaneous velocity of an IC is:",
+            "options": ["Zero", "Maximum", "The same for both bodies", "Different for each link"],
+            "answer": 2
+        },
+        {
+            "q": "Kennedy's Rule is also known as the:",
+            "options": ["Four-Center Theorem", "Three-Center-on-Line Theorem", "Grashof Theorem", "Kutzbach Criterion"],
+            "answer": 1
+        }
     ]
 };
 
