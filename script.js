@@ -816,86 +816,120 @@ const allModules = {
     ]
 };
 
-// 2. STATE VARIABLES
-let currentQuestions = []; // This will hold the active module's list
-let current = 0;
-let score = 0;
+// 1. GLOBAL VARIABLES (Must be at the top)
+let currentScore = 0;
+let currentQuestionIndex = 0;
+let currentModuleKey = "";
 
-// 3. NAVIGATION FUNCTIONS
-function startModule(moduleName) {
-    // Pick the questions based on the button clicked
-    currentQuestions = allModules[moduleName];
-    current = 0;
-    score = 0;
+// 2. START THE QUIZ
+function startModule(moduleKey) {
+    currentModuleKey = moduleKey;
+    currentQuestionIndex = 0;
+    currentScore = 0;
 
-    // UI Toggle
-    document.getElementById("menu-container").style.display = "none";
-    document.getElementById("quiz-container").style.display = "block";
-    document.getElementById("result").innerText = "";
+    // Show containers
+    document.getElementById('menu-container').style.display = 'none';
+    document.getElementById('quiz-container').style.display = 'block';
+    
+    // Ensure question parts are visible and result screen is hidden
+    document.getElementById('question').style.display = 'block';
+    document.getElementById('choices').style.display = 'block';
+    document.getElementById('home-btn').style.display = 'block';
+    document.getElementById('completion-screen').style.display = 'none';
 
     loadQuestion();
 }
 
-function returnToMenu() {
-    if (confirm("Gusto ka mobalik sa Menu or Niya? Your progress will be reset.")) {
-        document.getElementById("quiz-container").style.display = "none";
-        document.getElementById("menu-container").style.display = "block";
-    }
-}
-
-// 4. CORE QUIZ LOGIC
+// 3. LOAD THE QUESTION
 function loadQuestion() {
-    const q = currentQuestions[current];
-    document.getElementById("question").innerText = q.q;
+    const currentModule = allModules[currentModuleKey];
+    const qData = currentModule[currentQuestionIndex];
 
-    const choicesDiv = document.getElementById("choices");
-    choicesDiv.innerHTML = ""; 
+    // 1. Update the question text
+    document.getElementById('question').innerText = qData.q;
 
-    q.options.forEach((option, index) => {
-        const btn = document.createElement("button");
-        btn.innerText = option;
-        btn.classList.add("option-btn"); 
-        btn.onclick = () => checkAnswer(index);
-        choicesDiv.appendChild(btn);
+    // 2. Clear the container before building new buttons
+    const choicesContainer = document.getElementById('choices');
+    choicesContainer.innerHTML = "";
+
+    // 3. Build the LONG choice buttons
+    qData.options.forEach((option, index) => {
+        const button = document.createElement('button');
+        button.innerText = option;
+        
+        // Use 'choice-btn' for the long quiz boxes
+        button.classList.add('choice-btn'); 
+        
+        button.onclick = () => checkAnswer(index);
+        choicesContainer.appendChild(button);
     });
+
+    // 4. Reset the feedback text for the new question
+    document.getElementById('result').innerText = "";
 }
+// 4. CHECK THE ANSWER
+ function checkAnswer(choiceIndex) {
+    const currentModule = allModules[currentModuleKey];
+    const buttons = document.querySelectorAll('.choice-btn');
+    const resultDisplay = document.getElementById('result');
+    const correctIndex = currentModule[currentQuestionIndex].answer;
 
-function checkAnswer(choice) {
-    const q = currentQuestions[current];
-    const buttons = document.querySelectorAll(".option-btn");
-    const result = document.getElementById("result");
+    // 1. Disable all buttons so no double-clicking
+    buttons.forEach(btn => btn.disabled = true);
 
-    buttons.forEach((btn, index) => {
-        btn.disabled = true; 
-        if (index === q.answer) {
-            btn.classList.add("correct"); 
-        } else if (index === choice) {
-            btn.classList.add("wrong"); 
-        }
-    });
-
-    if (choice === q.answer) {
-        result.innerText = "Correct!";
-        score++;
+    // 2. Immediate Visual Feedback
+    if (choiceIndex === correctIndex) {
+        buttons[choiceIndex].classList.add('correct'); // Turns the button Green
+        resultDisplay.innerText = "✅ Sheeesh! Sakto";
+        resultDisplay.style.color = "#27ae60";
+        currentScore++;
     } else {
-        result.innerText = "Wrong!";
+        buttons[choiceIndex].classList.add('wrong'); // Turns your choice Red
+        buttons[correctIndex].classList.add('correct'); // Shows the right one in Green
+        resultDisplay.innerText = "❌ Incorrect.";
+        resultDisplay.style.color = "#e74c3c";
     }
 
+    // 3. Pause for 1.5 seconds so you can actually see the result
     setTimeout(() => {
-        current++;
-        if (current < currentQuestions.length) {
-            result.innerText = "";
-            loadQuestion();
+        if (currentQuestionIndex >= currentModule.length - 1) {
+            showResult();
         } else {
-            showFinalScore();
+            currentQuestionIndex++;
+            loadQuestion();
         }
-    }, 2000); 
+    }, 1500);
 }
 
-function showFinalScore() {
-    document.getElementById("question").innerText = `Quiz Finished! Your Score: ${score}/${currentQuestions.length}`;
-    document.getElementById("choices").innerHTML = `
-        <button class="module-btn" onclick="returnToMenu()">Try Another Module</button>
-    `;
-    document.getElementById("result").innerText = "";
+// 5. SHOW RESULTS
+function showResult() {
+    // Hide the question text and buttons
+    document.getElementById('question').style.display = 'none';
+    document.getElementById('choices').style.display = 'none';
+    document.getElementById('home-btn').style.display = 'none';
+    
+    const screen = document.getElementById('completion-screen');
+    screen.style.display = 'block';
+    
+    const totalQuestions = allModules[currentModuleKey].length;
+    document.getElementById('final-stats').innerText = `You scored ${currentScore} out of ${totalQuestions}.`;
+    
+    let percentage = (currentScore / totalQuestions) * 100;
+    let feedback = "";
+    if (percentage === 100) feedback = "Ready na ka mag board exam";
+    else if (percentage >= 75) feedback = "Great job! Ano jay?.";
+    else if (percentage >= 50) feedback = "Not bad, review the PDF.";
+    else feedback = "Keep practicing, Engineer!";
+    
+    document.getElementById('feedback-text').innerText = feedback;
+}
+
+// 6. BACK TO MENU
+function returnToMenu() {
+    document.getElementById('menu-container').style.display = 'block';
+    document.getElementById('quiz-container').style.display = 'none';
+    
+    // Safety Reset
+    currentScore = 0;
+    currentQuestionIndex = 0;
 }

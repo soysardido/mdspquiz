@@ -12,23 +12,31 @@
         <h1>Unta sayon ra mugawas from <i>Ahak Na Ni Review Center</i></h1>
         <p>Pili ug Lecture, Engineer:</p>
         <div class="module-grid">
-            <button class="module-btn" onclick="startModule('module1')">Lecture 1:Mechanisms</button>
-            <button class="module-btn" onclick="startModule('module2')">Lecture 2:Motion</button>
-            <button class="module-btn" onclick="startModule('module3')">Lecture 3:Linkages</button>
-            <button class="module-btn" onclick="startModule('module4')">Lecture 4:Mobility of Mechanisms</button>
-            <button class="module-btn" onclick="startModule('module5')">Lecture 5:Grashof's Condition</button>
-            <button class="module-btn" onclick="startModule('module6')">Lecture 6:Graphical Linkage Synthesis</button>
-            <button class="module-btn" onclick="startModule('module7')">Lecture 7:Instant Centers</button>
-
+            <button class="module-btn" onclick="startModule('module1')">Lecture 1: Mechanisms</button>
+            <button class="module-btn" onclick="startModule('module2')">Lecture 2: Motion</button>
+            <button class="module-btn" onclick="startModule('module3')">Lecture 3: Linkages</button>
+            <button class="module-btn" onclick="startModule('module4')">Lecture 4: Mobility</button>
+            <button class="module-btn" onclick="startModule('module5')">Lecture 5: Grashof's Condition</button>
+            <button class="module-btn" onclick="startModule('module6')">Lecture 6: Synthesis</button>
+            <button class="module-btn" onclick="startModule('module7')">Lecture 7: Instant Centers</button>
         </div>
     </div>
 
     <div id="quiz-container" style="display: none;">
         <button id="home-btn" onclick="returnToMenu()">🏠 Back to Menu</button>
         
-        <div id="question">Loading question...</div>
-        <div id="choices"></div>
-        <p id="result"></p>
+        <div id="question-area">
+            <div id="question">Loading question...</div>
+            <div id="choices"></div>
+            <p id="result"></p>
+        </div>
+
+        <div id="completion-screen" style="display: none; text-align: center;">
+            <h2>Lecture Complete!</h2>
+            <p id="final-stats"></p>
+            <p id="feedback-text"></p>
+            <button class="module-btn" onclick="returnToMenu()">Back to Lectures</button>
+        </div>
     </div>
 
     <script src="script.js"></script>

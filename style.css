@@ -1,63 +1,59 @@
-button {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    width: 200px;
-    cursor: pointer;
-}
-/* The default look of your buttons */
-.option-btn {
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    display: block;
-    width: 100%;
-    background-color: white;
-}
-
-/* Color for the correct answer */
-.correct {
-    background-color: #28a745 !important; /* Green */
-    color: white;
-    border-color: #1e7e34;
-}
-
-/* Color for the wrong answer */
-.wrong {
-    background-color: #dc3545 !important; /* Red */
-    color: white;
-    border-color: #bd2130;
-}
-/* Styling for the Home/Exit Button */
-#home-btn {
-    background-color: #6c757d;
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-/* Styling for the Module Selection Buttons */
+/* --- LECTURE MENU (The Big Blue Buttons) --- */
 .module-btn {
-    background-color: #007bff;
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #3498db;
     color: white;
     border: none;
-    padding: 20px;
-    width: 100%;
-    max-width: 400px;
-    margin: 10px auto;
-    display: block;
-    border-radius: 8px;
-    font-size: 18px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .module-btn:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
     transform: scale(1.02);
+}
+
+/* --- QUIZ CHOICES (The Long Boxes) --- */
+.choice-btn {
+    display: flex;           /* Uses flexbox for perfect alignment */
+    align-items: center;      /* Centers text vertically */
+    justify-content: center;  /* Centers text horizontally */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 12px 0;
+    background-color: #ffffff;
+    border: 2px solid #ecf0f1;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    text-align: center;       /* Fallback for older browsers */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 60px;         /* Ensures a consistent look */
+}
+
+/* Keep your Red/Green logic as it was */
+.correct {
+    background-color: #27ae60 !important;
+    color: white !important;
+    border-color: #2ecc71 !important;
+}
+
+.wrong {
+    background-color: #e74c3c !important;
+    color: white !important;
+    border-color: #c0392b !important;
+}
+#question {
+    font-size: 1.25rem;       /* Makes it slightly larger or equal to choices */
+    font-weight: 700;         /* Bold so it's clearly the 'Problem' */
+    text-align: center;       /* Matches your centered choices */
+    margin-bottom: 25px;      /* Gives space before the long buttons start */
+    line-height: 1.5;         /* Better readability for long engineering questions */
+    color: #2c3e50;           /* A strong, professional dark blue/grey */
 }
