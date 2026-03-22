@@ -507,6 +507,108 @@ const allModules = {
             "options": ["3000 fpm", "4500 fpm", "5000 fpm", "1760 fpm"],
             "answer": 1
         }
+    ],
+    "module5": [
+        {
+            "q": "What is the process of choosing different links in a kinematic chain to be the frame called?",
+            "options": ["Kinematic Synthesis", "Kinematic Inversion", "Mobility Analysis", "Dimensional Design"],
+            "answer": 1
+        },
+        {
+            "q": "How many possible kinematic inversions does a four-bar linkage have?",
+            "options": ["2", "3", "4", "Unlimited"],
+            "answer": 2
+        },
+        {
+            "q": "In a kinematic inversion, what happens to the relative motion between the links?",
+            "options": ["It changes completely", "It is not affected", "It becomes indeterminate", "It doubles"],
+            "answer": 1
+        },
+        {
+            "q": "Which inequality represents a Class I (Grashof) linkage?",
+            "options": ["S + L > P + Q", "S + L = P + Q", "S + L < P + Q", "S + P < L + Q"],
+            "answer": 2
+        },
+        {
+            "q": "In the Grashof condition formula, what does 'S' and 'L' represent?",
+            "options": ["Static and Linear", "Side and Lever", "Shortest and Longest link", "Slotted and Linked"],
+            "answer": 2
+        },
+        {
+            "q": "If S + L > P + Q, the linkage is Class II, meaning all its inversions are:",
+            "options": ["Double-Cranks", "Crank-Rockers", "Triple-Rockers", "Parallelograms"],
+            "answer": 2
+        },
+        {
+            "q": "To create a 'Double-Crank' (Drag-Link) mechanism, which link must be grounded?",
+            "options": ["The longest link (L)", "The shortest link (S)", "Any link adjacent to S", "The link opposite to S"],
+            "answer": 1
+        },
+        {
+            "q": "If you ground a link adjacent to the shortest link in a Class I linkage, you get a:",
+            "options": ["Double-Crank", "Crank-Rocker", "Double-Rocker", "Structure"],
+            "answer": 1
+        },
+        {
+            "q": "If you ground the link opposite to the shortest link in a Class I linkage, you get a:",
+            "options": ["Double-Crank", "Crank-Rocker", "Double-Rocker", "Change Point"],
+            "answer": 2
+        },
+        {
+            "q": "In a Double-Rocker inversion of a Grashof linkage, which link is the only one that can fully rotate?",
+            "options": ["The ground link", "The input link", "The output link", "The coupler link"],
+            "answer": 3
+        },
+        {
+            "q": "A linkage has lengths 3, 5, 7, and 8. What is the Grashof condition?",
+            "options": ["Grashof (3+8 < 5+7)", "Non-Grashof (3+8 > 5+7)", "Special-case (3+8 = 5+7)", "Not a linkage"],
+            "answer": 0
+        },
+        {
+            "q": "A linkage has lengths 4, 9, 5, and 10. What is the Grashof condition?",
+            "options": ["Grashof (4+10 < 9+5)", "Non-Grashof (4+10 > 9+5)", "Special-case (4+10 = 9+5)", "Structure"],
+            "answer": 2
+        },
+        {
+            "q": "What occurs in a Class III (Special-case) Grashof linkage when links become collinear?",
+            "options": ["Inversion", "Change Point", "Locking", "Acceleration"],
+            "answer": 1
+        },
+        {
+            "q": "At a 'Change Point', the output behavior of the linkage is:",
+            "options": ["Predictable", "Indeterminate", "Constant", "Zero"],
+            "answer": 1
+        },
+        {
+            "q": "Which mechanism is a common application of a Crank-Rocker?",
+            "options": ["Car Engine", "Windshield Wiper", "Differential Gear", "Bicycle Pedal"],
+            "answer": 1
+        },
+        {
+            "q": "In a slider-crank inversion where the slider block is stationary, which inversion is it?",
+            "options": ["Inversion #1", "Inversion #2", "Inversion #3", "Inversion #4"],
+            "answer": 3
+        },
+        {
+            "q": "How many links in a Class I linkage are capable of making a full revolution?",
+            "options": ["None", "At least one", "Only the longest", "All four"],
+            "answer": 1
+        },
+        {
+            "q": "In the 'Parallelogram' linkage application, the input motion is:",
+            "options": ["Reversed", "Duplicated at a remote location", "Converted to linear motion", "Stopped"],
+            "answer": 1
+        },
+        {
+            "q": "If a four-bar linkage has lengths 2, 6, 7, and 10, is it Grashof?",
+            "options": ["Yes (2+10 < 6+7)", "No (2+10 > 6+7)", "Yes (2+10 = 12)", "No (2+10 = 12)"],
+            "answer": 1
+        },
+        {
+            "q": "A Class II linkage is also known as a:",
+            "options": ["Grashof Linkage", "Non-Grashof Linkage", "Special Linkage", "Collinear Linkage"],
+            "answer": 1
+        }
     ]
 };
 
