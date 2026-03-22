@@ -1,0 +1,31 @@
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 200px;
+    cursor: pointer;
+}
+/* The default look of your buttons */
+.option-btn {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    background-color: white;
+}
+
+/* Color for the correct answer */
+.correct {
+    background-color: #28a745 !important; /* Green */
+    color: white;
+    border-color: #1e7e34;
+}
+
+/* Color for the wrong answer */
+.wrong {
+    background-color: #dc3545 !important; /* Red */
+    color: white;
+    border-color: #bd2130;
+}

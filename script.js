@@ -1,0 +1,271 @@
+const questions = [
+    {
+        "q": "Which field specifically treats the laws governing the motion of machine parts and the forces transmitted by them?",
+        "options": ["Thermodynamics", "Science of Mechanism", "Fluid Mechanics", "Statics"],
+        "answer": 1
+    },
+    {
+        "q": "What is the division of the theory of machines that deals with motion and forms of machine parts without considering forces?",
+        "options": ["Kinetics", "Dynamics", "Pure Mechanism", "Machine Design"],
+        "answer": 2
+    },
+    {
+        "q": "Which branch of theory of machines deals with inertia forces arising from the combined effect of mass and motion?",
+        "options": ["Kinetics", "Statics", "Kinematics", "Mechanics"],
+        "answer": 0
+    },
+    {
+        "q": "What is defined as a combination of resistant bodies arranged to compel mechanical forces of nature to produce work?",
+        "options": ["Mechanism", "Structure", "Machine", "Frame"],
+        "answer": 2
+    },
+    {
+        "q": "Which of the following is a characteristic of a 'Structure'?",
+        "options": ["It converts energy to work", "It has relative motion between parts", "It transmits forces or carries loads", "It modifies motion"],
+        "answer": 2
+    },
+    {
+        "q": "The stationary part of a machine that supports moving parts and regulates their path is the:",
+        "options": ["Link", "Driver", "Frame", "Follower"],
+        "answer": 2
+    },
+    {
+        "q": "What is a 'Rigid Body' in the context of mechanics?",
+        "options": ["A body that deforms slightly", "Particles remain at a constant distance", "A body that is liquid", "An infinitesimal part"],
+        "answer": 1
+    },
+    {
+        "q": "In a mechanism, the piece that causes or initiates motion is called the:",
+        "options": ["Follower", "Connector", "Driver", "Link"],
+        "answer": 2
+    },
+    {
+        "q": "A link that can transmit both a push and a pull is known as a:",
+        "options": ["Flexible Connector", "Rigid Connector", "Band", "Fluid Link"],
+        "answer": 1
+    },
+    {
+        "q": "Which of the following is an example of a Flexible Link?",
+        "options": ["Piston", "Belt", "Connecting Rod", "Machine Frame"],
+        "answer": 1
+    },
+    {
+        "q": "A 'Fluid Link' transmits motion through:",
+        "options": ["Tension only", "Rigid connection", "Fluid pressure", "Magnetic forces"],
+        "answer": 2
+    },
+    {
+        "q": "The series of positions occupied by a point in motion is its:",
+        "options": ["Cycle", "Path", "Translation", "Period"],
+        "answer": 1
+    },
+    {
+        "q": "What type of motion occurs when all points move in circular paths about a common axis?",
+        "options": ["Translation", "Rotation", "Reciprocation", "Helical Motion"],
+        "answer": 1
+    },
+    {
+        "q": "Motion where every point in a body has the same velocity and direction at any instant is:",
+        "options": ["Rotation", "Oscillation", "Translation", "Revolution"],
+        "answer": 2
+    },
+    {
+        "q": "A back-and-forth rotation through a specific angle is called:",
+        "options": ["Reciprocation", "Oscillation", "Revolution", "Helical Motion"],
+        "answer": 1
+    },
+    {
+        "q": "What is the term for a reciprocating translation along a straight line?",
+        "options": ["Oscillation", "Reciprocation", "Translation", "Revolution"],
+        "answer": 1
+    },
+    {
+        "q": "Which motion combines rotation and translation along the same axis?",
+        "options": ["Spherical Motion", "Helical Motion", "Curvilinear Motion", "Revolution"],
+        "answer": 1
+    },
+    {
+        "q": "The time required for one complete cycle of a mechanism is called the:",
+        "options": ["Frequency", "Period", "Velocity", "Acceleration"],
+        "answer": 1
+    },
+    {
+        "q": "A pair of elements where surface contact exists and one envelopes the other is a:",
+        "options": ["Higher Pair", "Lower Pair", "Screw Pair", "Flexible Pair"],
+        "answer": 1
+    },
+    {
+        "q": "Ball and roller bearings are examples of which type of pair?",
+        "options": ["Lower Pair", "Higher Pair", "Sliding Pair", "Turning Pair"],
+        "answer": 1
+    },
+    {
+        "q": "What is 'Inversion of Pairs'?",
+        "options": ["Turning machine upside down", "Exchanging the fixed element", "Reversing rotation", "Converting higher to lower pair"],
+        "answer": 1
+    },
+    {
+        "q": "A sliding pair is a type of lower pair where the relative motion is:",
+        "options": ["Pure rotation", "Pure translation", "Helical motion", "Oscillation"],
+        "answer": 1
+    },
+    {
+        "q": "In a turning pair, the relative motion between elements is:",
+        "options": ["Pure translation", "Pure rotation", "Reciprocation", "Spherical motion"],
+        "answer": 1
+    },
+    {
+        "q": "A screw pair involves which combination of motion?",
+        "options": ["Rotation and Revolution", "Rotation and Translation", "Translation and Reciprocation", "Oscillation and Rotation"],
+        "answer": 1
+    },
+    {
+        "q": "Which of these deals specifically with forces at rest?",
+        "options": ["Kinetics", "Statics", "Dynamics", "Kinematics"],
+        "answer": 1
+    },
+    {
+        "q": "A link consisting of several bodies moving as one is considered a:",
+        "options": ["Structure", "Kinematic Link", "Mechanism", "Particle"],
+        "answer": 1
+    },
+    {
+        "q": "The study of the 'form' of machine parts belongs to which division?",
+        "options": ["Dynamics", "Kinetics", "Pure Mechanism", "Statics"],
+        "answer": 2
+    },
+    {
+        "q": "Which connector can only transmit force when it is pulled?",
+        "options": ["Rigid Connector", "Flexible Connector (Band)", "Fluid Connector", "Intermediate Connector"],
+        "answer": 1
+    },
+    {
+        "q": "In the definition of a Machine, 'Resistant Bodies' implies:",
+        "options": ["Bodies must be flexible", "Bodies must not deform significantly", "Bodies must oppose motion", "Bodies must be fluid"],
+        "answer": 1
+    },
+    {
+        "q": "The time-rate of change of position of a point is its:",
+        "options": ["Displacement", "Velocity", "Acceleration", "Path"],
+        "answer": 1
+    },
+    {
+        "q": "Which motion occurs when a body remains at a constant distance from a fixed point?",
+        "options": ["Helical Motion", "Spherical Motion", "Linear Motion", "Reciprocation"],
+        "answer": 1
+    },
+    {
+        "q": "What is 'Determinate Motion'?",
+        "options": ["Unpredictable motion", "Fixed and compelled motion", "Motion that never stops", "Vacuum-only motion"],
+        "answer": 1
+    },
+    {
+        "q": "A link that transmits motion through its own deformation is a:",
+        "options": ["Rigid Link", "Flexible Link", "Fluid Link", "Structural Link"],
+        "answer": 1
+    },
+    {
+        "q": "Which is NOT one of the three motion forms in a Lower Pair?",
+        "options": ["Straight line", "Helix", "Circle", "Parabola"],
+        "answer": 3
+    },
+    {
+        "q": "In a higher pair, the contact between elements is described as:",
+        "options": ["Surface contact", "Point or line contact", "Total enclosure", "Geometrically identical"],
+        "answer": 1
+    },
+    {
+        "q": "If B has a curved channel to envelop A's positions, they form a:",
+        "options": ["Lower Pair", "Higher Pair", "Fluid Pair", "Flexible Pair"],
+        "answer": 0
+    },
+    {
+        "q": "Which division involves calculating the strength of materials?",
+        "options": ["Pure Mechanism", "Constructive Mechanism", "Statics", "Kinematics"],
+        "answer": 1
+    },
+    {
+        "q": "A wheel rotating on a fixed axle is an example of a:",
+        "options": ["Turning Pair", "Sliding Pair", "Screw Pair", "Higher Pair"],
+        "answer": 0
+    },
+    {
+        "q": "Motion in a circular path about an axis NOT passing through the body is:",
+        "options": ["Rotation", "Revolution", "Translation", "Oscillation"],
+        "answer": 1
+    },
+    {
+        "q": "What happens to 'Relative Motion' during an inversion of a Lower Pair?",
+        "options": ["Completely reversed", "It is not affected", "Becomes higher-pair", "Stops completely"],
+        "answer": 1
+    },
+    {
+        "q": "A 'Particle' is represented on a mechanical drawing as a:",
+        "options": ["Line", "Point", "Circle", "Vector"],
+        "answer": 1
+    },
+    {
+        "q": "Mechanical 3D Design uses 'Rigid Body' assumptions to:",
+        "options": ["Stop material bending", "Simplify relative motion analysis", "Comply with Laws", "Increase machine strength"],
+        "answer": 1
+    }
+];
+
+let current = 0;
+
+function loadQuestion() {
+    const q = questions[current];
+    document.getElementById("question").innerText = q.q;
+
+    const choicesDiv = document.getElementById("choices");
+    choicesDiv.innerHTML = ""; // clear old buttons
+
+    q.options.forEach((option, index) => {
+        const btn = document.createElement("button");
+        btn.innerText = option;
+        // Add the class your CSS uses
+        btn.classList.add("option-btn"); 
+        btn.onclick = () => checkAnswer(index);
+        choicesDiv.appendChild(btn);
+    });
+}
+
+function checkAnswer(choice) {
+    const q = questions[current];
+    const choicesDiv = document.getElementById("choices");
+    const buttons = choicesDiv.querySelectorAll("button");
+    const result = document.getElementById("result");
+
+    // COLOR CODING LOGIC START
+    buttons.forEach((btn, index) => {
+        btn.disabled = true; // prevent double clicking
+        if (index === q.answer) {
+            btn.classList.add("correct"); // Turn correct answer green
+        } else if (index === choice) {
+            btn.classList.add("wrong"); // Turn user choice red if wrong
+        }
+    });
+    // COLOR CODING LOGIC END
+
+    if (choice === q.answer) {
+        result.innerText = "Correct!";
+    } else {
+        result.innerText = "Wrong!";
+    }
+
+    // Increased timeout to 2 seconds so you have time to see the colors!
+    setTimeout(() => {
+        current++;
+        if (current < questions.length) {
+            result.innerText = "";
+            loadQuestion();
+        } else {
+            document.getElementById("question").innerText = "Quiz Finished!";
+            document.getElementById("choices").innerHTML = "";
+            result.innerText = "";
+        }
+    }, 2000); 
+}
+
+// Initial load
+loadQuestion();
