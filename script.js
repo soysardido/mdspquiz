@@ -269,11 +269,6 @@ const allModules = {
             "answer": 1
         },
         {
-            "q": "According to the lecture, what is the economical speed for leather belting?",
-            "options": ["3000 fpm", "4500 fpm", "5000 fpm", "1760 rpm"],
-            "answer": 1
-        },
-        {
             "q": "In 'Uniform Motion', what is the value of acceleration?",
             "options": ["Constant", "Zero", "Varying", "Infinite"],
             "answer": 1
@@ -409,6 +404,108 @@ const allModules = {
             "q": "A four-bar linkage where both cranks can make a full revolution is a:",
             "options": ["Crank-Rocker", "Double-Rocker", "Double-Crank", "Slider-Crank"],
             "answer": 2
+        }
+    ],
+    "module4": [
+        {
+            "q": "What is the number of independent coordinates required to define a mechanism's position called?",
+            "options": ["Mobility", "Degrees of Freedom", "Kinematic Chain", "Kutzbach Value"],
+            "answer": 1
+        },
+        {
+            "q": "In the context of a mechanism, what is another term for Degree of Freedom (DOF)?",
+            "options": ["Rotation", "Inversion", "Mobility", "Linkage"],
+            "answer": 2
+        },
+        {
+            "q": "A kinematic chain where every link is connected to at least two others, forming a loop, is a:",
+            "options": ["Open Mechanism Chain", "Closed Mechanism Chain", "Structure", "Binary Chain"],
+            "answer": 1
+        },
+        {
+            "q": "What is a mechanism called when all links move in the same or parallel planes?",
+            "options": ["Spherical Mechanism", "Planar Mechanism", "Linear Mechanism", "Spatial Mechanism"],
+            "answer": 1
+        },
+        {
+            "q": "Which equation is used to find the mobility (m) of a planar mechanism?",
+            "options": ["m = 2(n-1) - 3j", "m = 3(n-1) - 2j1 - j2", "m = n - 2j + 1", "m = 3n - 2j"],
+            "answer": 1
+        },
+        {
+            "q": "In Kutzbach's equation, what does the variable 'n' represent?",
+            "options": ["Number of joints", "Number of nodes", "Number of links", "Number of outputs"],
+            "answer": 2
+        },
+        {
+            "q": "A low-pair joint (j1) reduces the mobility of a mechanism by how many DOF?",
+            "options": ["1", "2", "3", "0"],
+            "answer": 1
+        },
+        {
+            "q": "A high-pair joint (j2), such as a cam or gear, reduces mobility by how many DOF?",
+            "options": ["1", "2", "3", "0"],
+            "answer": 0
+        },
+        {
+            "q": "If the calculated mobility (m) is equal to 0, the system is classified as a:",
+            "options": ["Mechanism", "Structure", "Preloaded Structure", "Kinematic Chain"],
+            "answer": 1
+        },
+        {
+            "q": "What does a mobility result of m < 0 (e.g., -1 or -2) indicate?",
+            "options": ["A standard mechanism", "A preloaded structure", "An open chain", "A simple joint"],
+            "answer": 1
+        },
+        {
+            "q": "A mechanism with mobility m = 1 requires how many independent inputs to produce a predictable output?",
+            "options": ["Zero", "One", "Two", "Three"],
+            "answer": 1
+        },
+        {
+            "q": "If m = 2, the mechanism requires how many motors or inputs to control its motion?",
+            "options": ["1", "2", "3", "4"],
+            "answer": 1
+        },
+        {
+            "q": "Calculate mobility: n=3 links, j1=3 joints, j2=0 joints. What is m?",
+            "options": ["-1", "0", "1", "2"],
+            "answer": 1
+        },
+        {
+            "q": "Calculate mobility: n=4 links, j1=4 joints, j2=0 joints. What is m?",
+            "options": ["0", "1", "2", "3"],
+            "answer": 1
+        },
+        {
+            "q": "Calculate mobility: n=5 links, j1=5 joints, j2=0 joints. What is m?",
+            "options": ["0", "1", "2", "3"],
+            "answer": 2
+        },
+        {
+            "q": "Which type of joint is a pin connection or a sliding block considered?",
+            "options": ["Lower-pair (j1)", "Higher-pair (j2)", "Binary link", "Complex node"],
+            "answer": 0
+        },
+        {
+            "q": "Which type of joint is a roller or a cam considered in mobility calculations?",
+            "options": ["Lower-pair (j1)", "Higher-pair (j2)", "Fixed link", "Ternary link"],
+            "answer": 1
+        },
+        {
+            "q": "How many DOF are there in a planar higher-pair joint before it is constrained?",
+            "options": ["3 DOF", "6 DOF", "1 DOF", "5 DOF"],
+            "answer": 0
+        },
+        {
+            "q": "In a closed kinematic chain, how many links is each link connected to at minimum?",
+            "options": ["One", "Two", "Three", "Four"],
+            "answer": 1
+        },
+        {
+            "q": "According to the lecture exercises, what is the economical speed for leather belting?",
+            "options": ["3000 fpm", "4500 fpm", "5000 fpm", "1760 fpm"],
+            "answer": 1
         }
     ]
 };
