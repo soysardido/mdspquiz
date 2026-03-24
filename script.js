@@ -817,6 +817,7 @@ const allModules = {
 };
 
 // 1. GLOBAL VARIABLES (Must be at the top)
+let shuffledQuestions = []; 
 let currentScore = 0;
 let currentQuestionIndex = 0;
 let currentModuleKey = "";
@@ -827,101 +828,122 @@ function startModule(moduleKey) {
     currentQuestionIndex = 0;
     currentScore = 0;
 
-    // Show containers
+    // 1. Create a COPY of the questions so we don't ruin the original list
+    shuffledQuestions = [...allModules[moduleKey]];
+
+    // 2. Shuffle the copy
+    shuffleArray(shuffledQuestions);
+
+    // 3. UI Resets
     document.getElementById('menu-container').style.display = 'none';
     document.getElementById('quiz-container').style.display = 'block';
-    
-    // Ensure question parts are visible and result screen is hidden
     document.getElementById('question').style.display = 'block';
     document.getElementById('choices').style.display = 'block';
     document.getElementById('home-btn').style.display = 'block';
     document.getElementById('completion-screen').style.display = 'none';
+    
+    // Reset Progress Bar
+    document.getElementById('progress-container').style.display = 'block';
+    document.getElementById('progress-bar').style.width = '0%';
 
     loadQuestion();
 }
-
 // 3. LOAD THE QUESTION
 function loadQuestion() {
-    const currentModule = allModules[currentModuleKey];
-    const qData = currentModule[currentQuestionIndex];
+    // 1. Get the data for the current shuffled question
+    const qData = shuffledQuestions[currentQuestionIndex];
+    const total = shuffledQuestions.length;
 
-    // 1. Update the question text
+    // 2. Safety check: If no data, stop here
+    if (!qData) return;
+
+    // 3. PROGRESS BAR LOGIC
+    const progressPercent = ((currentQuestionIndex + 1) / total) * 100;
+    document.getElementById('progress-bar').style.width = progressPercent + "%";
+
+    // 4. Update the question text
     document.getElementById('question').innerText = qData.q;
 
-    // 2. Clear the container before building new buttons
+    // 5. Clear and build buttons
     const choicesContainer = document.getElementById('choices');
     choicesContainer.innerHTML = "";
 
-    // 3. Build the LONG choice buttons
     qData.options.forEach((option, index) => {
         const button = document.createElement('button');
         button.innerText = option;
-        
-        // Use 'choice-btn' for the long quiz boxes
         button.classList.add('choice-btn'); 
-        
         button.onclick = () => checkAnswer(index);
         choicesContainer.appendChild(button);
     });
 
-    // 4. Reset the feedback text for the new question
+    // 6. Reset the feedback text
     document.getElementById('result').innerText = "";
 }
 // 4. CHECK THE ANSWER
  function checkAnswer(choiceIndex) {
-    const currentModule = allModules[currentModuleKey];
+    // 1. Point to the SHUFFLED list, not the old module list
+    const qData = shuffledQuestions[currentQuestionIndex]; 
     const buttons = document.querySelectorAll('.choice-btn');
     const resultDisplay = document.getElementById('result');
-    const correctIndex = currentModule[currentQuestionIndex].answer;
+    const correctIndex = qData.answer;
 
-    // 1. Disable all buttons so no double-clicking
+    // 2. Disable all buttons immediately (prevents double-clicking)
     buttons.forEach(btn => btn.disabled = true);
 
-    // 2. Immediate Visual Feedback
+    // 3. Logic for Right vs Wrong
     if (choiceIndex === correctIndex) {
-        buttons[choiceIndex].classList.add('correct'); // Turns the button Green
-        resultDisplay.innerText = "✅ Sheeesh! Sakto";
+        buttons[choiceIndex].classList.add('correct');
+        resultDisplay.innerText = "✅ Correct, Engineer!";
         resultDisplay.style.color = "#27ae60";
         currentScore++;
     } else {
-        buttons[choiceIndex].classList.add('wrong'); // Turns your choice Red
-        buttons[correctIndex].classList.add('correct'); // Shows the right one in Green
-        resultDisplay.innerText = "❌ Incorrect.";
+        buttons[choiceIndex].classList.add('wrong');
+        buttons[correctIndex].classList.add('correct'); // Show them the right one
+        resultDisplay.innerText = "❌ Wrong Answer.";
         resultDisplay.style.color = "#e74c3c";
     }
 
-    // 3. Pause for 1.5 seconds so you can actually see the result
+    // 4. The "Proceed" Logic (The part that was stuck)
     setTimeout(() => {
-        if (currentQuestionIndex >= currentModule.length - 1) {
+        // Use shuffledQuestions.length to check if we are at the end
+        if (currentQuestionIndex >= shuffledQuestions.length - 1) {
             showResult();
         } else {
-            currentQuestionIndex++;
-            loadQuestion();
+            currentQuestionIndex++; // Move to next index
+            loadQuestion();        // Run the loader again
         }
-    }, 1500);
+    }, 1000); // 1.5 second delay so they can see the red/green
 }
-
 // 5. SHOW RESULTS
 function showResult() {
-    // Hide the question text and buttons
+    // 1. Hide the quiz elements
+    document.getElementById('progress-container').style.display = 'none';
     document.getElementById('question').style.display = 'none';
     document.getElementById('choices').style.display = 'none';
     document.getElementById('home-btn').style.display = 'none';
     
+    // 2. Show the completion screen
     const screen = document.getElementById('completion-screen');
-    screen.style.display = 'block';
-    
-    const totalQuestions = allModules[currentModuleKey].length;
-    document.getElementById('final-stats').innerText = `You scored ${currentScore} out of ${totalQuestions}.`;
-    
-    let percentage = (currentScore / totalQuestions) * 100;
-    let feedback = "";
-    if (percentage === 100) feedback = "Ready na ka mag board exam";
-    else if (percentage >= 75) feedback = "Great job! Ano jay?.";
-    else if (percentage >= 50) feedback = "Not bad, review the PDF.";
-    else feedback = "Keep practicing, Engineer!";
-    
-    document.getElementById('feedback-text').innerText = feedback;
+    if (screen) {
+        screen.style.display = 'block';
+        
+        // Use shuffledQuestions to get the correct count
+        const totalQuestions = shuffledQuestions.length;
+        
+        // 3. Update the score text
+        document.getElementById('final-stats').innerText = `You scored ${currentScore} out of ${totalQuestions}.`;
+        
+        // 4. Performance Feedback
+        let percentage = (currentScore / totalQuestions) * 100;
+        let feedback = "";
+
+        if (percentage === 100) feedback = "Ready na ka mag board exam!";
+        else if (percentage >= 75) feedback = "Great job! Ano jay?.";
+        else if (percentage >= 50) feedback = "Not bad, review the PDF.";
+        else feedback = "Keep practicing, Engineer!";
+        
+        document.getElementById('feedback-text').innerText = feedback;
+    }
 }
 
 // 6. BACK TO MENU
@@ -932,4 +954,12 @@ function returnToMenu() {
     // Safety Reset
     currentScore = 0;
     currentQuestionIndex = 0;
+}
+
+// Function to shuffle an array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
 }

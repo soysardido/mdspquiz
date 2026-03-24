@@ -9,7 +9,7 @@
 <body>
 
     <div id="menu-container">
-        <h1>Unta sayon ra mugawas from <i>Ahak Na Ni Review Center</i></h1>
+        <h1>Alhamdulilah from <i>Ahak Na Ni Review Center</i> version 1.1.0</h1>
         <p>Pili ug Lecture, Engineer:</p>
         <div class="module-grid">
             <button class="module-btn" onclick="startModule('module1')">Lecture 1: Mechanisms</button>
@@ -26,6 +26,9 @@
         <button id="home-btn" onclick="returnToMenu()">🏠 Back to Menu</button>
         
         <div id="question-area">
+            <div id="progress-container" style="width: 100%; background-color: #ecf0f1; border-radius: 20px; margin-bottom: 25px; height: 14px; overflow: hidden; border: 1px solid #bdc3c7;">
+    <div id="progress-bar" style="width: 0%; height: 100%; background-color: #27ae60; transition: width 0.4s ease-in-out;"></div>
+</div>
             <div id="question">Loading question...</div>
             <div id="choices"></div>
             <p id="result"></p>
