@@ -850,69 +850,78 @@ function startModule(moduleKey) {
 }
 // 3. LOAD THE QUESTION
 function loadQuestion() {
-    // 1. Get the data for the current shuffled question
     const qData = shuffledQuestions[currentQuestionIndex];
     const total = shuffledQuestions.length;
-
-    // 2. Safety check: If no data, stop here
     if (!qData) return;
 
-    // 3. PROGRESS BAR LOGIC
+    // 1. Progress Bar
     const progressPercent = ((currentQuestionIndex + 1) / total) * 100;
     document.getElementById('progress-bar').style.width = progressPercent + "%";
 
-    // 4. Update the question text
+    // 2. Update Question Text
     document.getElementById('question').innerText = qData.q;
 
-    // 5. Clear and build buttons
+    // 3. SHUFFLE THE OPTIONS
+    // We create an array of objects that keeps track of the original text
+    let choices = qData.options.map((opt, index) => {
+        return { text: opt, isCorrect: index === qData.answer };
+    });
+
+    // Use the shuffle utility we added earlier
+    shuffleArray(choices);
+
+    // 4. Build Buttons
     const choicesContainer = document.getElementById('choices');
     choicesContainer.innerHTML = "";
 
-    qData.options.forEach((option, index) => {
+    choices.forEach((choice) => {
         const button = document.createElement('button');
-        button.innerText = option;
+        button.innerText = choice.text;
         button.classList.add('choice-btn'); 
-        button.onclick = () => checkAnswer(index);
+        
+        // Instead of passing an index, we pass whether it's correct
+        button.onclick = () => checkAnswerImproved(choice.isCorrect, button, choices);
         choicesContainer.appendChild(button);
     });
 
-    // 6. Reset the feedback text
     document.getElementById('result').innerText = "";
 }
 // 4. CHECK THE ANSWER
- function checkAnswer(choiceIndex) {
-    // 1. Point to the SHUFFLED list, not the old module list
-    const qData = shuffledQuestions[currentQuestionIndex]; 
+function checkAnswerImproved(isCorrect, clickedButton, allChoices) {
     const buttons = document.querySelectorAll('.choice-btn');
     const resultDisplay = document.getElementById('result');
-    const correctIndex = qData.answer;
 
-    // 2. Disable all buttons immediately (prevents double-clicking)
+    // Disable all buttons
     buttons.forEach(btn => btn.disabled = true);
 
-    // 3. Logic for Right vs Wrong
-    if (choiceIndex === correctIndex) {
-        buttons[choiceIndex].classList.add('correct');
-        resultDisplay.innerText = "✅ Correct, Engineer!";
+    if (isCorrect) {
+        clickedButton.classList.add('correct');
+        resultDisplay.innerText = "✅ Ayosss,Good job!";
         resultDisplay.style.color = "#27ae60";
         currentScore++;
     } else {
-        buttons[choiceIndex].classList.add('wrong');
-        buttons[correctIndex].classList.add('correct'); // Show them the right one
-        resultDisplay.innerText = "❌ Wrong Answer.";
+        clickedButton.classList.add('wrong');
+        resultDisplay.innerText = "❌ Bawi next sem.";
         resultDisplay.style.color = "#e74c3c";
+
+        // Find the button that WAS correct and highlight it green
+        buttons.forEach(btn => {
+            // We find the button whose text matches the correct choice text
+            const qData = shuffledQuestions[currentQuestionIndex];
+            if (btn.innerText === qData.options[qData.answer]) {
+                btn.classList.add('correct');
+            }
+        });
     }
 
-    // 4. The "Proceed" Logic (The part that was stuck)
     setTimeout(() => {
-        // Use shuffledQuestions.length to check if we are at the end
         if (currentQuestionIndex >= shuffledQuestions.length - 1) {
             showResult();
         } else {
-            currentQuestionIndex++; // Move to next index
-            loadQuestion();        // Run the loader again
+            currentQuestionIndex++;
+            loadQuestion();
         }
-    }, 1000); // 1.5 second delay so they can see the red/green
+    }, 1000);
 }
 // 5. SHOW RESULTS
 function showResult() {
