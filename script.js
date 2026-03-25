@@ -817,6 +817,7 @@ const allModules = {
 };
 
 // 1. GLOBAL VARIABLES (Must be at the top)
+let wrongQuestions = []; 
 let shuffledQuestions = []; 
 let currentScore = 0;
 let currentQuestionIndex = 0;
@@ -824,6 +825,7 @@ let currentModuleKey = "";
 
 // 2. START THE QUIZ
 function startModule(moduleKey) {
+    wrongQuestions = [];
     currentModuleKey = moduleKey;
     currentQuestionIndex = 0;
     currentScore = 0;
@@ -901,6 +903,7 @@ function checkAnswerImproved(isCorrect, clickedButton, allChoices) {
         currentScore++;
     } else {
         clickedButton.classList.add('wrong');
+        wrongQuestions.push(shuffledQuestions[currentQuestionIndex]);
         resultDisplay.innerText = "❌ Bawi next sem.";
         resultDisplay.style.color = "#e74c3c";
 
@@ -936,7 +939,6 @@ function showResult() {
     if (screen) {
         screen.style.display = 'block';
         
-        // Use shuffledQuestions to get the correct count
         const totalQuestions = shuffledQuestions.length;
         
         // 3. Update the score text
@@ -952,9 +954,24 @@ function showResult() {
         else feedback = "Keep practicing, Engineer!";
         
         document.getElementById('feedback-text').innerText = feedback;
+
+        // --- NEW RETRY BUTTON LOGIC ---
+        // Remove existing retry button if it exists (prevents duplicates)
+        const existingBtn = document.getElementById('retry-wrong-btn');
+        if (existingBtn) existingBtn.remove();
+
+        // Only show button if there are wrong questions and it's not a perfect score
+        if (wrongQuestions.length > 0) {
+            const retryBtn = document.createElement('button');
+            retryBtn.id = 'retry-wrong-btn';
+            retryBtn.innerText = `Retry ${wrongQuestions.length} Wrong Questions`;
+            retryBtn.classList.add('module-btn'); // Using your Big Blue menu style
+            retryBtn.style.marginTop = "20px";
+            retryBtn.onclick = retryWrongQuestions;
+            screen.appendChild(retryBtn);
+        }
     }
 }
-
 // 6. BACK TO MENU
 function returnToMenu() {
     document.getElementById('menu-container').style.display = 'block';
@@ -971,4 +988,24 @@ function shuffleArray(array) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
+}
+function retryWrongQuestions() {
+    // 1. Swap the lists
+    shuffledQuestions = [...wrongQuestions];
+    
+    // 2. Clear the wrong questions list for the new "round"
+    wrongQuestions = []; 
+    
+    // 3. Reset the counters
+    currentQuestionIndex = 0;
+    currentScore = 0;
+
+    // 4. Hide completion screen and show quiz
+    document.getElementById('completion-screen').style.display = 'none';
+    document.getElementById('quiz-container').style.display = 'block';
+    document.getElementById('question').style.display = 'block';
+    document.getElementById('choices').style.display = 'block';
+    document.getElementById('progress-container').style.display = 'block';
+
+    loadQuestion();
 }
