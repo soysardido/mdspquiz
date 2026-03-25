@@ -848,6 +848,9 @@ function startModule(moduleKey) {
     document.getElementById('progress-container').style.display = 'block';
     document.getElementById('progress-bar').style.width = '0%';
 
+    // Add this inside startModule and retryWrongQuestions
+    document.getElementById('next-btn').style.display = 'none';
+
     loadQuestion();
 }
 // 3. LOAD THE QUESTION
@@ -889,27 +892,30 @@ function loadQuestion() {
     document.getElementById('result').innerText = "";
 }
 // 4. CHECK THE ANSWER
-function checkAnswerImproved(isCorrect, clickedButton, allChoices) {
+function checkAnswerImproved(isCorrect, clickedButton) {
     const buttons = document.querySelectorAll('.choice-btn');
     const resultDisplay = document.getElementById('result');
+    const nextBtn = document.getElementById('next-btn');
 
-    // Disable all buttons
+    // 1. Disable all choice buttons
     buttons.forEach(btn => btn.disabled = true);
 
+    // 2. Highlight Right/Wrong
     if (isCorrect) {
         clickedButton.classList.add('correct');
-        resultDisplay.innerText = "✅ Ayosss,Good job!";
+        resultDisplay.innerText = "✅ Correct, Engineer!";
         resultDisplay.style.color = "#27ae60";
         currentScore++;
     } else {
         clickedButton.classList.add('wrong');
-        wrongQuestions.push(shuffledQuestions[currentQuestionIndex]);
-        resultDisplay.innerText = "❌ Bawi next sem.";
+        resultDisplay.innerText = "❌ Wrong Answer.";
         resultDisplay.style.color = "#e74c3c";
+        
+        // Save for the "Retry" feature
+        wrongQuestions.push(shuffledQuestions[currentQuestionIndex]);
 
-        // Find the button that WAS correct and highlight it green
+        // Show the correct answer in green
         buttons.forEach(btn => {
-            // We find the button whose text matches the correct choice text
             const qData = shuffledQuestions[currentQuestionIndex];
             if (btn.innerText === qData.options[qData.answer]) {
                 btn.classList.add('correct');
@@ -917,14 +923,14 @@ function checkAnswerImproved(isCorrect, clickedButton, allChoices) {
         });
     }
 
-    setTimeout(() => {
-        if (currentQuestionIndex >= shuffledQuestions.length - 1) {
-            showResult();
-        } else {
-            currentQuestionIndex++;
-            loadQuestion();
-        }
-    }, 1000);
+    // 3. SHOW THE NEXT BUTTON (instead of the timer)
+    nextBtn.style.display = "block";
+    
+    // 4. Set the click action for the Next button
+    nextBtn.onclick = () => {
+        nextBtn.style.display = "none"; // Hide itself for the next round
+        proceedToNext();
+    };
 }
 // 5. SHOW RESULTS
 function showResult() {
@@ -1006,6 +1012,16 @@ function retryWrongQuestions() {
     document.getElementById('question').style.display = 'block';
     document.getElementById('choices').style.display = 'block';
     document.getElementById('progress-container').style.display = 'block';
+    // Add this inside startModule and retryWrongQuestions
+    document.getElementById('next-btn').style.display = 'none';
 
     loadQuestion();
+}
+function proceedToNext() {
+    if (currentQuestionIndex >= shuffledQuestions.length - 1) {
+        showResult();
+    } else {
+        currentQuestionIndex++;
+        loadQuestion();
+    }
 }
