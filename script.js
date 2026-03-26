@@ -813,144 +813,431 @@ const allModules = {
             "options": ["Four-Center Theorem", "Three-Center-on-Line Theorem", "Grashof Theorem", "Kutzbach Criterion"],
             "answer": 1
         }
+    ],
+    "handToolsQuiz": [
+        {
+            q: "What is the standard height for mounting a machinist's bench vise?",
+            options: ["Waist height", "Elbow height", "Shoulder height", "Knee height"],
+            answer: 1
+        },
+        {
+            q: "Which type of vise base allows the tool to be rotated 360 degrees?",
+            options: ["Solid base", "Fixed base", "Swivel base", "Magnetic base"],
+            answer: 2
+        },
+        {
+            q: "The size of a machinist's bench vise is determined by:",
+            options: ["The weight", "The jaw width", "The handle length", "The screw diameter"],
+            answer: 1
+        },
+        {
+            q: "What is the most common weight range for a machinist's ball-peen hammer?",
+            options: ["2 oz to 8 oz", "4 oz to 3 lbs", "1 lb to 5 lbs", "10 lbs to 20 lbs"],
+            answer: 1
+        },
+        {
+            q: "Which hammer is used to avoid 'mushrooming' or damaging delicate machine parts?",
+            options: ["Sledge hammer", "Ball-peen hammer", "Soft-faced hammer", "Claw hammer"],
+            answer: 2
+        },
+        {
+            q: "What is the risk of using a wrench with jaws that are too large for the nut?",
+            options: ["The nut will get too hot", "The jaws will spread and round the corners of the nut", "The handle will snap", "The threads will strip"],
+            answer: 1
+        },
+        {
+            q: "Which wrench provides a 'ratcheting' action without being removed from the nut?",
+            options: ["Box-end wrench", "Open-end wrench", "Socket wrench", "Pipe wrench"],
+            answer: 2
+        },
+        {
+            q: "A Stillson wrench is another name for a:",
+            options: ["Monkey wrench", "Pipe wrench", "Torque wrench", "Allen wrench"],
+            answer: 1
+        },
+        {
+            q: "Which screwdriver has a cross-shaped tip and is used to prevent over-tightening?",
+            options: ["Standard (Slotted)", "Phillips", "Torx", "Robertson"],
+            answer: 1
+        },
+        {
+            q: "What is the result of using a screwdriver that is too small for the screw slot?",
+            options: ["The screw breaks", "The slot becomes 'chewed' or burred", "The screwdriver becomes magnetized", "Nothing happens"],
+            answer: 1
+        },
+        {
+            q: "Which pliers have a 'slip-joint' to allow the jaws to open wider for different sizes?",
+            options: ["Diagonal pliers", "Needle-nose pliers", "Combination/Slip-joint pliers", "Side-cutting pliers"],
+            answer: 2
+        },
+        {
+            q: "Which chisel is used to cut keyways and square corners?",
+            options: ["Flat Chisel", "Cape Chisel", "Round-nose Chisel", "Diamond-point Chisel"],
+            answer: 1
+        },
+        {
+            q: "What is the recommended cutting angle for a chisel used on cast iron?",
+            options: ["40 degrees", "60 degrees", "80 degrees", "90 degrees"],
+            answer: 1
+        },
+        {
+            q: "A hacksaw blade with 32 teeth per inch (TPI) is best for:",
+            options: ["Soft metals", "Thick tool steel", "Thin tubing and sheet metal", "Large aluminum blocks"],
+            answer: 2
+        },
+        {
+            q: "On which stroke should a hacksaw perform its cutting action?",
+            options: ["The pull stroke", "The push stroke", "Both strokes", "Neither stroke"],
+            answer: 1
+        },
+        {
+            q: "What is the term for a file that has only one set of parallel diagonal teeth?",
+            options: ["Single-cut", "Double-cut", "Rasp-cut", "Curved-tooth"],
+            answer: 0
+        },
+        {
+            q: "Why should you never use a file without a handle?",
+            options: ["It will break the file", "The sharp tang can pierce your hand", "The file will get too hot", "The finish will be poor"],
+            answer: 1
+        },
+        {
+            q: "Which filing technique is used to produce a very smooth, flat finish?",
+            options: ["Cross filing", "Draw filing", "Round filing", "Angular filing"],
+            answer: 1
+        },
+        {
+            q: "Which tap is the first one used when starting a thread by hand?",
+            options: ["Plug Tap", "Taper Tap", "Bottoming Tap", "Master Tap"],
+            answer: 1
+        },
+        {
+            q: "What is the purpose of the 'flutes' on a tap or reamer?",
+            options: ["To make the tool lighter", "To provide a path for chips and lubricant", "To sharpen the tool", "To measure the depth"],
+            answer: 1
+        },
+        {
+            q: "External threads are cut using a tool called a:",
+            options: ["Tap", "Reamer", "Die", "Chisel"],
+            answer: 2
+        },
+        {
+            q: "A reamer is used to:",
+            options: ["Drill a new hole", "Make a hole perfectly round and accurately sized", "Thread a hole", "Measure a hole"],
+            answer: 1
+        },
+        {
+            q: "In what direction should a reamer always be turned?",
+            options: ["Counter-clockwise", "Clockwise", "Back and forth", "It doesn't matter"],
+            answer: 1
+        },
+        {
+            q: "Which tool is used to remove high spots from a metal surface to make it perfectly flat?",
+            options: ["File", "Chisel", "Scraper", "Hacksaw"],
+            answer: 2
+        },
+        {
+            q: "Which abrasive cloth is commonly used for polishing metal parts?",
+            options: ["Sandpaper", "Emery cloth", "Glass paper", "Flint paper"],
+            answer: 1
+        },
+        {
+            q: "What should be applied to tools before long-term storage to prevent rust?",
+            options: ["Water", "Thin coating of oil", "Paint", "Sand"],
+            answer: 1
+        },
+        {
+            q: "Mushroomed heads on chisels should be:",
+            options: ["Left alone", "Ground off to prevent flying chips", "Hammered flat", "Painted"],
+            answer: 1
+        },
+        {
+            q: "What is the danger of using a hammer with a loose handle?",
+            options: ["The head may fly off and cause injury", "The handle will vibrate", "The hammer becomes heavier", "The finish will be dull"],
+            answer: 0
+        },
+        {
+            q: "When using a hacksaw, approximately how many strokes per minute should be used?",
+            options: ["10-20", "40-60", "100-120", "200+"],
+            answer: 1
+        },
+        {
+            q: "Which tool is used to clean metal chips (pinning) from a file?",
+            options: ["Wire brush/File card", "Screwdriver", "Hacksaw blade", "Magnet"],
+            answer: 0
+        }
+    ],
+    "layoutTools": [
+        {
+            q: "What is the primary purpose of 'Laying Out' in machine shop work?",
+            options: ["To measure final dimensions", "To indicate shape and material to be removed", "To polish the surface", "To calculate raw weight"],
+            answer: 1
+        },
+        {
+            q: "All layouts must be made from a baseline or finished surface known as a:",
+            options: ["Centerline", "Margin", "Datum", "Offset"],
+            answer: 2
+        },
+        {
+            q: "Which layout tool features a hardened steel point and is used to draw straight lines?",
+            options: ["Prick Punch", "Scriber", "Divider", "Trammel"],
+            answer: 1
+        },
+        {
+            q: "Which tool is used for drawing circles, arcs, and stepping off equal distances?",
+            options: ["Dividers", "Hermaphrodite Calipers", "T-Square", "Surface Gauge"],
+            answer: 0
+        },
+        {
+            q: "A 'Trammel' is used instead of a standard divider when:",
+            options: ["High precision is required", "The distance is too large for regular dividers", "The material is soft", "Marking on curved surfaces"],
+            answer: 1
+        },
+        {
+            q: "Which caliper has one curved leg and one straight leg with a scriber point?",
+            options: ["Outside Caliper", "Inside Caliper", "Hermaphrodite Caliper", "Vernier Caliper"],
+            answer: 2
+        },
+        {
+            q: "The Hermaphrodite Caliper is primarily used for:",
+            options: ["Measuring hole diameters", "Scribing lines parallel to an edge", "Checking flatness", "Transferring measurements"],
+            answer: 1
+        },
+        {
+            q: "What is the main difference between a 'Prick Punch' and a 'Center Punch'?",
+            options: ["Prick punch is larger", "Prick punch (30° point) vs Center punch (90° point)", "Center punch marks lines", "Prick punch is for wood"],
+            answer: 1
+        },
+        {
+            q: "Which tool provides a true flat reference plane for layout work?",
+            options: ["Angle Plate", "Surface Plate", "V-Block", "Parallels"],
+            answer: 1
+        },
+        {
+            q: "What material is commonly used for modern surface plates due to stability?",
+            options: ["Cast Iron", "High Carbon Steel", "Granite", "Aluminum Alloy"],
+            answer: 2
+        },
+        {
+            q: "Which tool is used to hold round work securely for layout or drilling?",
+            options: ["Angle Plate", "V-Block", "Parallel Bar", "C-Clamp"],
+            answer: 1
+        },
+        {
+            q: "What is the purpose of using 'Layout Dye' or 'Bluing'?",
+            options: ["Rust prevention", "To make scribed lines stand out clearly", "Lubrication", "Hardening"],
+            answer: 1
+        },
+        {
+            q: "A 'Surface Gauge' is used with a Surface Plate to:",
+            options: ["Measure thickness", "Scribe lines at a height parallel to the plate", "Check weight", "Cut sheet metal"],
+            answer: 1
+        },
+        {
+            q: "Which device holds work in a vertical position during layout?",
+            options: ["V-Block", "Angle Plate", "C-Clamp", "Parallel Bar"],
+            answer: 1
+        },
+        {
+            q: "Which grade of Surface Plate is the most accurate (Laboratory Grade)?",
+            options: ["Grade A", "Grade AA", "Grade B", "Grade C"],
+            answer: 1
+        },
+        {
+            q: "Why is Granite preferred over Cast Iron for surface plates?",
+            options: ["It is lighter", "It does not rust or burr if scratched", "It is magnetic", "It is flexible"],
+            answer: 1
+        },
+        {
+            q: "What is the recommended method for sharpening a scriber point?",
+            options: ["Coarse grinding wheel", "Honing on an oilstone while rotating", "Bastard file", "Heat and quench"],
+            answer: 1
+        },
+        {
+            q: "What is the purpose of 'Witness Marks' (Pop Marks) along a layout line?",
+            options: ["Decoration", "Permanent reference if lines rub off", "Increase saw speed", "Indicate lubrication"],
+            answer: 1
+        },
+        {
+            q: "Which type of hacksaw blade 'Set' has teeth that follow a wavy path?",
+            options: ["Alternate Set", "Raker Set", "Wave Set", "Straight Set"],
+            answer: 2
+        },
+        {
+            q: "What happens if a coarse-pitch blade (14 TPI) is used on thin sheet metal?",
+            options: ["Faster cut", "Teeth will straddle and strip off", "Blade stays cooler", "Smoother finish"],
+            answer: 1
+        },
+        {
+            q: "What is 'Chalking' a file used for?",
+            options: ["Increasing friction", "Preventing 'pinning' or clogging of teeth", "Better visibility", "Sharpening"],
+            answer: 1
+        },
+        {
+            q: "The 'Tang' of a file is the part that:",
+            options: ["Does the cutting", "Is inserted into the handle", "Has the brand name", "Cleans metal"],
+            answer: 1
+        },
+        {
+            q: "What is the 'Lead' on a Hand Reamer?",
+            options: ["Material type", "Tapered section for entry and alignment", "Travel distance", "Handle attachment"],
+            answer: 1
+        },
+        {
+            q: "Why must you turn a tap backward periodically when threading?",
+            options: ["To sharpen", "To break chips and clear flutes", "To cool metal", "To check depth"],
+            answer: 1
+        },
+        {
+            q: "Which pliers are designed with a side-cutter for wire only?",
+            options: ["Slip-joint", "Diagonal cutting pliers", "Vice grips", "Water pump pliers"],
+            answer: 1
+        },
+        {
+            q: "How should files be stored to maintain efficiency?",
+            options: ["In a pile", "Wrapped in oily cloth", "Separated in a rack", "In water"],
+            answer: 2
+        },
+        {
+            q: "What is the standard angle of a Center Punch point?",
+            options: ["30°", "60°", "90°", "120°"],
+            answer: 2
+        },
+        {
+            q: "When using a hacksaw, what is the recommended strokes per minute?",
+            options: ["10-20", "40-60", "100-120", "200+"],
+            answer: 1
+        },
+        {
+            q: "Which tool cleans 'pinning' (metal chips) from a file?",
+            options: ["File card / Wire brush", "Screwdriver", "Hacksaw", "Magnet"],
+            answer: 0
+        }
     ]
 };
 
-// 1. GLOBAL VARIABLES (Must be at the top)
-let wrongQuestions = []; 
-let shuffledQuestions = []; 
+// GLOBAL VARIABLES
+let wrongQuestions = [];
+let shuffledQuestions = [];
 let currentScore = 0;
 let currentQuestionIndex = 0;
 let currentModuleKey = "";
 
-// 2. START THE QUIZ
+// START THE QUIZ
 function startModule(moduleKey) {
     wrongQuestions = [];
     currentModuleKey = moduleKey;
     currentQuestionIndex = 0;
     currentScore = 0;
 
-    // 1. Create a COPY of the questions so we don't ruin the original list
     shuffledQuestions = [...allModules[moduleKey]];
-
-    // 2. Shuffle the copy
     shuffleArray(shuffledQuestions);
 
-    // 3. UI Resets
     document.getElementById('menu-container').style.display = 'none';
     document.getElementById('quiz-container').style.display = 'block';
     document.getElementById('question').style.display = 'block';
     document.getElementById('choices').style.display = 'block';
     document.getElementById('home-btn').style.display = 'block';
     document.getElementById('completion-screen').style.display = 'none';
-    
-    // Reset Progress Bar
     document.getElementById('progress-container').style.display = 'block';
     document.getElementById('progress-bar').style.width = '0%';
-
-    // Add this inside startModule and retryWrongQuestions
     document.getElementById('next-btn').style.display = 'none';
 
     loadQuestion();
 }
-// 3. LOAD THE QUESTION
+
+// LOAD THE QUESTION
 function loadQuestion() {
     const qData = shuffledQuestions[currentQuestionIndex];
     const total = shuffledQuestions.length;
     if (!qData) return;
 
-    // 1. Progress Bar
     const progressPercent = ((currentQuestionIndex + 1) / total) * 100;
     document.getElementById('progress-bar').style.width = progressPercent + "%";
-
-    // 2. Update Question Text
     document.getElementById('question').innerText = qData.q;
 
-    // 3. SHUFFLE THE OPTIONS
-    // We create an array of objects that keeps track of the original text
     let choices = qData.options.map((opt, index) => {
         return { text: opt, isCorrect: index === qData.answer };
     });
 
-    // Use the shuffle utility we added earlier
     shuffleArray(choices);
 
-    // 4. Build Buttons
     const choicesContainer = document.getElementById('choices');
     choicesContainer.innerHTML = "";
 
     choices.forEach((choice) => {
         const button = document.createElement('button');
         button.innerText = choice.text;
-        button.classList.add('choice-btn'); 
-        
-        // Instead of passing an index, we pass whether it's correct
+        button.classList.add('choice-btn');
         button.onclick = () => checkAnswerImproved(choice.isCorrect, button, choices);
         choicesContainer.appendChild(button);
     });
 
     document.getElementById('result').innerText = "";
 }
-// 4. CHECK THE ANSWER
-function checkAnswerImproved(isCorrect, clickedButton) {
+
+// CHECK THE ANSWER
+function checkAnswerImproved(isCorrect, clickedButton, choices) {
     const buttons = document.querySelectorAll('.choice-btn');
     const resultDisplay = document.getElementById('result');
     const nextBtn = document.getElementById('next-btn');
 
-    // 1. Disable all choice buttons
     buttons.forEach(btn => btn.disabled = true);
 
-    // 2. Highlight Right/Wrong
     if (isCorrect) {
         clickedButton.classList.add('correct');
-        resultDisplay.innerText = "✅ Correct, Engineer!";
+        resultDisplay.innerText = "✅Ayoss, Good job!";
         resultDisplay.style.color = "#27ae60";
         currentScore++;
     } else {
         clickedButton.classList.add('wrong');
-        resultDisplay.innerText = "❌ Wrong Answer.";
+        resultDisplay.innerText = "❌ grades doesnt define intelligence";
         resultDisplay.style.color = "#e74c3c";
-        
-        // Save for the "Retry" feature
+
         wrongQuestions.push(shuffledQuestions[currentQuestionIndex]);
 
-        // Show the correct answer in green
-        buttons.forEach(btn => {
-            const qData = shuffledQuestions[currentQuestionIndex];
-            if (btn.innerText === qData.options[qData.answer]) {
+        const allButtons = document.querySelectorAll('.choice-btn');
+        allButtons.forEach((btn, i) => {
+            if (choices[i].isCorrect) {
                 btn.classList.add('correct');
             }
         });
     }
 
-    // 3. SHOW THE NEXT BUTTON (instead of the timer)
     nextBtn.style.display = "block";
-    
-    // 4. Set the click action for the Next button
-    nextBtn.onclick = () => {
-        nextBtn.style.display = "none"; // Hide itself for the next round
+
+    // FIXED: clone the button to remove ALL old event listeners before adding new one
+    const freshNextBtn = nextBtn.cloneNode(true);
+    nextBtn.parentNode.replaceChild(freshNextBtn, nextBtn);
+
+    freshNextBtn.style.display = "block";
+    freshNextBtn.addEventListener('click', function() {
+        freshNextBtn.style.display = "none";
         proceedToNext();
-    };
+    });
 }
-// 5. SHOW RESULTS
+
+function proceedToNext() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex >= shuffledQuestions.length) {
+        showResult();
+    } else {
+        loadQuestion();
+    }
+}
+// SHOW RESULTS
 function showResult() {
-    // 1. Hide the quiz elements
     document.getElementById('progress-container').style.display = 'none';
     document.getElementById('question').style.display = 'none';
     document.getElementById('choices').style.display = 'none';
-    document.getElementById('home-btn').style.display = 'none';
-    
-    // 2. Show the completion screen
+    // REMOVED: home-btn hide line
+
     const screen = document.getElementById('completion-screen');
     if (screen) {
         screen.style.display = 'block';
-        
+
         const totalQuestions = shuffledQuestions.length;
-        
-        // 3. Update the score text
         document.getElementById('final-stats').innerText = `You scored ${currentScore} out of ${totalQuestions}.`;
-        
-        // 4. Performance Feedback
+
         let percentage = (currentScore / totalQuestions) * 100;
         let feedback = "";
 
@@ -958,70 +1245,99 @@ function showResult() {
         else if (percentage >= 75) feedback = "Great job! Ano jay?.";
         else if (percentage >= 50) feedback = "Not bad, review the PDF.";
         else feedback = "Keep practicing, Engineer!";
-        
+
         document.getElementById('feedback-text').innerText = feedback;
 
-        // --- NEW RETRY BUTTON LOGIC ---
-        // Remove existing retry button if it exists (prevents duplicates)
         const existingBtn = document.getElementById('retry-wrong-btn');
         if (existingBtn) existingBtn.remove();
 
-        // Only show button if there are wrong questions and it's not a perfect score
         if (wrongQuestions.length > 0) {
             const retryBtn = document.createElement('button');
             retryBtn.id = 'retry-wrong-btn';
             retryBtn.innerText = `Retry ${wrongQuestions.length} Wrong Questions`;
-            retryBtn.classList.add('module-btn'); // Using your Big Blue menu style
+            retryBtn.classList.add('module-btn');
             retryBtn.style.marginTop = "20px";
             retryBtn.onclick = retryWrongQuestions;
             screen.appendChild(retryBtn);
         }
     }
 }
-// 6. BACK TO MENU
-function returnToMenu() {
-    document.getElementById('menu-container').style.display = 'block';
-    document.getElementById('quiz-container').style.display = 'none';
-    
-    // Safety Reset
-    currentScore = 0;
+
+function retryWrongQuestions() {
+    shuffledQuestions = [...wrongQuestions];
+    wrongQuestions = [];
     currentQuestionIndex = 0;
+    currentScore = 0;
+
+    document.getElementById('completion-screen').style.display = 'none';
+    document.getElementById('quiz-container').style.display = 'block';
+    document.getElementById('question').style.display = 'block';
+    document.getElementById('choices').style.display = 'block';
+    document.getElementById('progress-container').style.display = 'block';
+    document.getElementById('next-btn').style.display = 'none';
+    document.getElementById('home-btn').style.display = 'block'; // FIXED: keep home btn visible
+
+    loadQuestion();
 }
 
-// Function to shuffle an array
+// SHUFFLE UTILITY
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-function retryWrongQuestions() {
-    // 1. Swap the lists
-    shuffledQuestions = [...wrongQuestions];
-    
-    // 2. Clear the wrong questions list for the new "round"
-    wrongQuestions = []; 
-    
-    // 3. Reset the counters
-    currentQuestionIndex = 0;
-    currentScore = 0;
 
-    // 4. Hide completion screen and show quiz
-    document.getElementById('completion-screen').style.display = 'none';
-    document.getElementById('quiz-container').style.display = 'block';
-    document.getElementById('question').style.display = 'block';
-    document.getElementById('choices').style.display = 'block';
-    document.getElementById('progress-container').style.display = 'block';
-    // Add this inside startModule and retryWrongQuestions
-    document.getElementById('next-btn').style.display = 'none';
+// SUBJECT AND LESSON DATA
+const subjectData = {
+    'Theory of Machines': [
+        { name: 'Lecture 1: Mechanisms', key: 'module1' },
+        { name: 'Lecture 2: Motion', key: 'module2' },
+        { name: 'Lecture 3: Linkages', key: 'module3' },
+        { name: 'Lecture 4: Mobility', key: 'module4' },
+        { name: 'Lecture 5: Grashof', key: 'module5' },
+        { name: 'Lecture 6: Synthesis', key: 'module6' },
+        { name: 'Lecture 7: Instant Centers', key: 'module7' }
+    ],
+    'Machine Shop': [
+        { name: 'Hand Tools', key: 'handToolsQuiz' },      // FIXED: added missing comma
+        { name: 'Layout Tools', key: 'layoutTools' }
+    ]
+};
 
-    loadQuestion();
+// SHOW LESSONS FOR A SUBJECT
+function showLessons(subject) {
+    const subjectMenu = document.getElementById('subject-menu');
+    const lessonMenu = document.getElementById('lesson-menu');
+    const lessonGrid = document.getElementById('lesson-grid');
+    const lessonTitle = document.getElementById('lesson-title');
+
+    lessonGrid.innerHTML = '';
+    lessonTitle.innerText = `Lectures for ${subject}:`;
+
+    subjectData[subject].forEach(lesson => {
+        const btn = document.createElement('button');
+        btn.className = 'module-btn';
+        btn.innerText = lesson.name;
+        btn.onclick = () => startModule(lesson.key);
+        lessonGrid.appendChild(btn);
+    });
+
+    subjectMenu.style.display = 'none';
+    lessonMenu.style.display = 'block';
 }
-function proceedToNext() {
-    if (currentQuestionIndex >= shuffledQuestions.length - 1) {
-        showResult();
-    } else {
-        currentQuestionIndex++;
-        loadQuestion();
-    }
+
+// BACK TO SUBJECTS
+function backToSubjects() {
+    document.getElementById('subject-menu').style.display = 'block';
+    document.getElementById('lesson-menu').style.display = 'none';
+}
+
+// RETURN TO MENU
+function returnToMenu() {
+    document.getElementById('menu-container').style.display = 'block';
+    document.getElementById('subject-menu').style.display = 'block';
+    document.getElementById('lesson-menu').style.display = 'none';
+    document.getElementById('quiz-container').style.display = 'none';
+    document.getElementById('completion-screen').style.display = 'none';
 }
