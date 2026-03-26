@@ -602,7 +602,7 @@ const allModules = {
         {
             "q": "If a four-bar linkage has lengths 2, 6, 7, and 10, is it Grashof?",
             "options": ["Yes (2+10 < 6+7)", "No (2+10 > 6+7)", "Yes (2+10 = 12)", "No (2+10 = 6+7)"],
-            "answer": 3
+            "answer": 0
         },
         {
             "q": "A Class II linkage is also known as a:",
